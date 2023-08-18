@@ -1,0 +1,8 @@
+set serverout on
+DECLARE
+emp_name varchar2(50);
+
+begin
+emp_name := 'Shubham bhapkar';
+dbms_output.put_line(emp_name || ' is' || ' working in cognizant');
+end;
