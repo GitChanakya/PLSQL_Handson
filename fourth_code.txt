@@ -1,0 +1,14 @@
+set serveroutput on
+DECLARE
+--v_num number:=23;
+v_num number;
+BEGIN
+v_num := 23;
+if v_num < 50 then
+dbms_output.put_line('inside the IF');
+end if;
+dbms_output.put_line('outside the IF');
+end;
+
+
+

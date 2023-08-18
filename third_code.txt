@@ -1,0 +1,9 @@
+set SERVEROUTPUT on
+DECLARE
+v_sal number(8);
+v_name varchar2(50);
+BEGIN
+select sal,ename into v_sal,v_name from emp where ename like '%KING%';
+dbms_output.put_line(v_sal || ' is ' || ' salary of the ' || v_name);
+end;
+
