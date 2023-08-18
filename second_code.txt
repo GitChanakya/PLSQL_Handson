@@ -1,0 +1,7 @@
+set SERVEROUTPUT on
+DECLARE
+v_sal number(8);
+BEGIN
+select sal into v_sal from emp where ename like '%KING%';
+dbms_output.put_line(v_sal || ' is ' || ' salary of the king');
+end;
