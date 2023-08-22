@@ -1,0 +1,16 @@
+set SERVEROUTPUT on;
+declare 
+v_number number := 0;
+v_result number;
+v_tables number := &enter_the_table_name;
+begin 
+loop
+v_number := v_number + 1;
+v_result := v_tables * v_number;
+dbms_output.put_line('-------------------------------------------------------------------------------------------');
+dbms_output.put_line( v_tables || ' * ' || v_number || ' = ' || v_result);
+if v_number > 9 then 
+exit;
+end if;
+end loop;
+end;
