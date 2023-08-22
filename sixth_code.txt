@@ -1,0 +1,25 @@
+--SET SERVEROUTPUT ON;
+declare
+v_city_name VARCHAR2(100) := '&enter_the_name_of_city_name';
+begin
+     if v_city_name = 'Phaltan' then
+     dbms_output.put_line('***************************************************************************************');
+     dbms_output.put_line('      It is my hometown       ');
+     dbms_output.put_line('***************************************************************************************');
+     elsif v_city_name = 'Pune' then
+     dbms_output.put_line('***************************************************************************************');
+     dbms_output.put_line('      It is my karmbhumi        ');
+     dbms_output.put_line('***************************************************************************************');
+     elsif v_city_name = 'Nashik' then
+     dbms_output.put_line('***************************************************************************************');
+     dbms_output.put_line('      I will visit this city soon      ');
+     dbms_output.put_line('***************************************************************************************');
+     else
+     dbms_output.put_line('***************************************************************************************');
+     dbms_output.put_line('Beloved Nation ' || 'My Nation');
+     dbms_output.put_line('***************************************************************************************');
+     dbms_output.put_line('BHARAT');
+     end if;
+end;
+    
+
