@@ -1,0 +1,14 @@
+--set SERVEROUTPUT on;
+DECLARE
+v_number number := &enter_a_number;
+begin
+if mod(v_number,2) = 0 then
+dbms_output.put_line('***************************************************************************************');
+dbms_output.put_line(' the number is even');
+else
+dbms_output.put_line('***************************************************************************************');
+dbms_output.put_line(' the number is odd');
+end if;
+dbms_output.put_line('******************Test completed********************');
+
+end;
