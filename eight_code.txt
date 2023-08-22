@@ -1,0 +1,11 @@
+DECLARE
+v_number number :=1;
+v_result number;
+begin
+WHILE v_number <= 10 loop
+v_result := 19 * v_number;
+dbms_output.put_line( '19 ' || ' * ' || v_number || ' = ' || v_result);
+v_number := v_number+1 ;
+end loop;
+dbms_output.put_line ('Outside the loop');
+end;
