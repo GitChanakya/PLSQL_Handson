@@ -1,0 +1,11 @@
+set SERVEROUTPUT ON;
+declare 
+v_number number := '&enter_the_number_for_tables';
+v_result number;
+begin
+dbms_output.new_line;
+for v_rank in 1 ..10 loop
+v_result := v_number * v_rank;
+dbms_output.put_line(v_number || '   X   ' || v_rank || ' = ' || v_result );
+end loop;
+end;
