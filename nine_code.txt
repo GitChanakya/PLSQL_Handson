@@ -1,0 +1,21 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+    v_contain NUMBER := 1;
+BEGIN
+    WHILE v_contain < 3 LOOP
+        FOR v_counter IN 1 .. 1 LOOP
+            --dbms_output.put_line(v_counter);
+            dbms_output.new_line;
+            dbms_output.put_line('   -    ');
+            FOR v_counters IN 1 .. 2 LOOP
+                --dbms_output.put_line(v_counter || /n);
+                dbms_output.put('  ***  ');
+                   dbms_output.new_line;
+            END LOOP;
+        END LOOP;
+        v_contain := v_contain + 1;
+    END LOOP;
+END;
+/
+
