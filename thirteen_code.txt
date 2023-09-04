@@ -1,0 +1,25 @@
+create table trainer (
+trainer_name varchar2(100));
+
+create table subject (
+subject_name varchar2(100));
+
+commit;
+/
+
+insert into trainer values ('Aishwarya');
+insert into subject values ('English');
+commit;
+/
+
+create view vw_shubham as select trainer_name, subject_name from trainer,subject;
+commit;
+/
+create or REPLACE trigger  vw_shubham_trigger
+instead of insert on vw_shubham
+for each row 
+begin
+insert into trainer(trainer_name) values (:new.trainer_name);
+insert into subject(subject_name) values (:new.subject_name);
+end;
+/
