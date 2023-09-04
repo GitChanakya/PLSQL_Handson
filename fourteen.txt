@@ -1,0 +1,13 @@
+set SERVEROUTPUT on;
+declare
+cursor cursor_emp is select job from emp where job like '%ANALYST%';
+v_job varchar2(50);
+begin
+open cursor_emp;
+loop
+fetch cursor_emp into v_job;
+dbms_output.put_line(v_job);
+exit when cursor_emp %NOTFOUND;
+END LOOP;
+CLOSE cursor_emp;
+End;
