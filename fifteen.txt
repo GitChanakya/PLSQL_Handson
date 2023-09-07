@@ -1,0 +1,16 @@
+set serveroutput on;
+declare 
+v_name varchar2(300);
+cursor p_cur (var_id varchar2) is
+select ename from emp
+where empno < var_id;
+begin
+open p_cur(7800);
+loop
+fetch p_cur into v_name;
+exit when p_cur%notfound;
+dbms_output.put_line (v_name);
+end loop;
+close p_cur;
+end;
+
