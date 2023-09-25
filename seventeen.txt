@@ -1,0 +1,12 @@
+SET SERVEROUTPUT ON;
+DECLARE
+  v_name emp.ename%TYPE;
+  CURSOR cur_name(par_cur_no number) IS
+    SELECT ename into v_name FROM emp WHERE empno < par_cur_no;
+BEGIN
+  FOR l IN cur_name(8090)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE(l.ename);
+  END LOOP;
+END;
+/
