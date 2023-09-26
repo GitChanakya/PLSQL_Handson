@@ -1,0 +1,24 @@
+SET SERVEROUTPUT ON;
+DECLARE
+  TYPE rv_dept IS RECORD (
+    f_name VARCHAR2(1000),
+    d_name dept.dname%TYPE
+  );
+  var1 rv_dept;
+BEGIN
+  FOR rec IN (
+    SELECT ename, dname
+    FROM emp
+    JOIN dept USING (deptno)
+    WHERE emp.empno < 10000
+  ) LOOP
+    var1.f_name := rec.ename;
+    var1.d_name := rec.dname;
+    DBMS_OUTPUT.PUT_LINE(var1.f_name || ' ' || var1.d_name);
+  END LOOP;
+END;
+/
+
+
+
+
