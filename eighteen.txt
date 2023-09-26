@@ -1,0 +1,22 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+  CURSOR c_cursor IS
+    SELECT e.ename, d.dname
+    FROM emp e
+    INNER JOIN dept d ON e.deptno = d.deptno;
+  var_name c_cursor%ROWTYPE;
+BEGIN
+  OPEN c_cursor;
+  
+  LOOP
+    FETCH c_cursor INTO var_name;
+    EXIT WHEN c_cursor%NOTFOUND;
+    
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || var_name.ename);
+    DBMS_OUTPUT.PUT_LINE('Department Name: ' || var_name.dname);
+  END LOOP;
+  
+  CLOSE c_cursor;
+END;
+/
