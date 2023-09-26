@@ -1,0 +1,16 @@
+SET SERVEROUTPUT ON;
+DECLARE
+  TYPE rv_dept IS RECORD (
+    f_name VARCHAR2(1000),
+    d_name dept.dname%TYPE
+  );
+  var1 rv_dept;
+BEGIN
+  SELECT ename, dname INTO var1.f_name, var1.d_name
+  FROM emp
+  JOIN dept USING (deptno)
+  WHERE emp.empno = 7839;
+
+  DBMS_OUTPUT.PUT_LINE(var1.f_name || ' ' || var1.d_name);
+END;
+/
